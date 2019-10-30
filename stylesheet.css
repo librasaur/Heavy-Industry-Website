@@ -1,0 +1,481 @@
+* {
+	font-family: 'Rationale', sans-serif;
+	box-sizing: border-box;
+}
+
+html {
+	background: url("recording_studio_b&w.png") no-repeat center center fixed;
+	-o-background-size: cover;
+	-ms-background-size: cover;
+	-moz-background-size: cover;
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+
+*::selection {
+	background-color: rgba(204, 0, 0, 0.50);
+}
+
+#footer {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	text-align: center;
+	background-color: rgba(255, 255, 255, 0.2);
+}
+
+#footer p {
+	margin: 5px 0;
+	color: #000;
+	font-size: 100%;
+}
+
+#navBar {
+	position: fixed;
+	z-index: 1;
+	margin: 0 auto;
+	padding: 0;
+	min-width: 100%;
+	top: 0;
+	left: 0;
+	right: 0;
+	background-color: #fff;
+	box-shadow: 0 0 30px 0 #000;
+}
+
+/*SMALLEST*/
+@media only screen and (max-width: 409px) {
+	#navBar {
+		height: 160px;
+		text-align: center;
+	}
+
+	#logo img {
+		display: inline-block;
+		margin: auto;
+		margin: 10px 0 0 0;
+		max-height: 100%;
+		max-width: 250px;
+	}
+	
+	#navBar ul {
+		margin: 0;
+		padding: 0;
+	}
+
+	#navBar ul li {
+		display: inline-block;
+		padding: 10px 40px;
+	}
+	
+	#sloganContainer img{
+		max-width: 75%;
+		height: auto;
+	}
+}
+
+/*MEDIUM*/
+@media only screen and (min-width: 409px) {
+	#navBar {
+		height: 125px;
+		text-align: center;
+	}
+
+	#logo img {
+		display: inline-block;
+		margin: auto;
+		margin: 10px 0 0 0;
+		max-height: 100%;
+		max-width: 250px;
+	}
+	
+	#navBar ul {
+		margin: 0;
+		padding: 0;
+	}
+
+	#navBar ul li {
+		display: inline-block;
+		padding: 13px 20px;
+	}
+	
+	#sloganContainer img{
+		max-width: 100%;
+		height: auto;
+	}
+}
+
+/*BIGGEST*/
+@media only screen and (min-width: 740px) {
+	#navBar {
+		height: 100px;
+	}
+
+	#logo img {
+		position: relative;
+		top: 10px;
+		left: 25px;
+		float: left;
+		max-height: 100%;
+		max-width: 275px;
+	}
+	
+	#navBar ul {
+		padding: 20px 0;
+	}
+
+	#navBar ul li {
+		float: right;
+		padding: 20px 25px;
+	}
+	
+	#sloganContainer img{
+		max-width: 100%;
+		height: auto;
+	}
+}
+
+#navBar ul {
+	list-style-type: none;
+}
+
+#navBar ul li {
+	text-align: center;
+}
+
+#navBar ul li a {
+	font-size: 130%;
+	display: block;
+	color: #000;
+	text-align: center;
+	text-decoration: none;
+}
+
+#navBar ul li a:hover {
+	color: #737373;
+}
+
+#navBar ul li a:after {
+	display: block;
+	content: '';
+	border-bottom: 2px solid #c00;
+	transform: scaleX(0);
+	-o-transition: transform .25s ease-in-out;
+	-ms-transition: transform .25s ease-in-out;
+	-moz-transition: transform .25s ease-in-out;
+	-webkit-transition: transform .25s ease-in-out;
+	transition: transform .25s ease-in-out;
+}
+
+#navBar ul li a:hover:after {
+	transform: scaleX(1);
+}
+
+.absoluteCenter {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+}
+
+#sloganContainer {
+	position: fixed;
+	margin-top: 75px;
+	width: 400px;
+	height: 400px;
+	text-align: center;
+}
+
+#contactBtn {
+	padding: 10px 0;
+	cursor: pointer;
+}
+
+#contactBtn a {
+	padding: 12px 15px;
+	text-decoration: none;
+	background-color: #fff;
+	border-radius: 10px;
+	font-size: 125%;
+	color: #000;
+	-o-transition: .75s;
+	-ms-transition: .75s;
+	-moz-transition: .75s;
+	-webkit-transition: .75s;
+	transition: .75s;
+}
+
+#contactBtn a:hover {
+	background-color: rgba(255, 255, 255, 0.70);
+}
+
+
+
+/*BEGINNING OF POPUP*/
+
+#popupContainer {
+	position: fixed;
+	margin-top: 75px;
+	width: 400px;
+	height: 400px;
+	text-align: center;
+}
+
+#popup {
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	display: none;
+	position: fixed;
+	background-color: #313131;
+	border-radius: 7px;
+	border: 2px solid rgba(204, 0, 0, 0.50);
+	box-shadow: 0 0 50px rgba(204, 0, 0, 0.30);
+}
+
+#popup h1 {
+	margin-top: 0;
+	margin-bottom: 10px;
+	color: #fff;
+}
+
+#close {
+	position: absolute;
+	right: -14px;
+	top: -14px;
+	color: #fff;
+	cursor: pointer;
+	font-size: 130%;
+}
+
+form {
+	max-width: 400px;
+	padding: 10px 140px 10px 30px;
+	border-radius: 7px;
+	border: 2px #000;
+	background-color: #fff;
+}
+
+input[type=text] {
+	font-size: 100%;
+	width: 170%;
+	padding: 10px;
+	margin-top: 30px;
+	border: 1px solid #ccc;
+}
+
+textarea {
+	font-size: 100%;
+	width: 170%;
+	height: 95px;
+	padding: 10px;
+	resize: none;
+	margin-top: 30px;
+	border: 1px solid #ccc;
+	margin-bottom: 20px;
+}
+
+#submitBtn {
+	margin-bottom: 5px;
+	position: relative;
+	padding: 5px 10px;
+	background-color: #000;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+#submitBtn a {
+	text-decoration: none;
+	color: #fff;
+}
+
+#submitBtn:hover {
+	background-color: rgba(0, 0, 0, 0.45);
+}
+
+/*END OF POPUP*/
+
+
+
+/*BEGINNING OF AUDIO PLAYER */
+
+.audio-player-wrapper {
+	width: 225px;
+	margin: 100px auto 0 auto;
+	background-color: rgba(255, 255, 255, 0.85);
+	border-radius: 4px;
+	text-align: center;
+}
+
+.audio-player-controls {
+	padding: 15px;
+}
+
+@-o-keyframes loadingStripes {
+	0% {
+		background-position: -20px;
+	}
+	
+	100% {
+		background-position: 0px;
+	}
+}
+
+@-ms-keyframes loadingStripes {
+	0% {
+		background-position: -20px;
+	}
+	
+	100% {
+		background-position: 0px;
+	}
+}
+
+@-moz-keyframes loadingStripes {
+	0% {
+		background-position: -20px;
+	}
+	
+	100% {
+		background-position: 0px;
+	}
+}
+
+@-webkit-keyframes loadingStripes {
+	0% {
+		background-position: -20px;
+	}
+	
+	100% {
+		background-position: 0px;
+	}
+}
+
+@keyframes loadingStripes {
+	0% {
+		background-position: -20px;
+	}
+	
+	100% {
+		background-position: 0px;
+	}
+}
+
+.audio-player-progress {
+	display: block;
+	width: 100%;
+	height: 5px;
+	border-radius: 25px;
+	background-color: #737373;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+.audio-player-progress.loading {
+	background-image: -o-linear-gradient(-45deg, #808e97 25%, transparent 25%, transparent 50%, #808e97 50%, #808e97 75%, transparent 75%, transparent);
+	background-image: -ms-linear-gradient(-45deg, #808e97 25%, transparent 25%, transparent 50%, #808e97 50%, #808e97 75%, transparent 75%, transparent);
+	background-image: -moz-linear-gradient(-45deg, #808e97 25%, transparent 25%, transparent 50%, #808e97 50%, #808e97 75%, transparent 75%, transparent);
+	background-image: -webkit-linear-gradient(-45deg, #808e97 25%, transparent 25%, transparent 50%, #808e97 50%, #808e97 75%, transparent 75%, transparent);
+	background-image: linear-gradient(-45deg, #808e97 25%, transparent 25%, transparent 50%, #808e97 50%, #808e97 75%, transparent 75%, transparent);
+	background-size: 20px 20px;
+	-o-animation: loadingStripes 700ms linear infinite;
+	-ms-animation: loadingStripes 700ms linear infinite;
+	-moz-animation: loadingStripes 700ms linear infinite;
+	-webkit-animation: loadingStripes 700ms linear infinite;
+	animation: loadingStripes 700ms linear infinite;
+}
+
+.audio-player-progress-bar {
+	-o-transition: width 200ms linear;
+	-ms-transition: width 200ms linear;
+	-moz-transition: width 200ms linear;
+	-webkit-transition: width 200ms linear;
+	transition: width 200ms linear;
+	display: block;
+	height: 100%;
+	width: 0;
+	max-width: 100%;
+	background-color: rgba(204, 0, 0, 0.75);
+	border-radius: 25px;
+	cursor: pointer;
+}
+
+.audio-player-button {
+	display: block;
+	position: relative;
+	float: left;
+	width: 35px;
+	height: 35px;
+	margin: 0 5px;
+	border-radius: 100%;
+	border: 3px solid #737373;
+	opacity: 0.8;
+	cursor: pointer;
+}
+
+.audio-player-button:hover {
+	border-color: rgba(204, 0, 0, 0.75);
+}
+
+.audio-player-button.small {
+	width: 25px;
+	height: 25px;
+	margin-top: 5px;
+}
+
+.audio-player-button-wrappers {
+	overflow: hidden;
+	*zoom: 1;
+	display: block;
+	width: 115px;
+	margin: 15px auto 0 auto;
+}
+
+.audio-player-song-name {
+	font-size: 130%;
+}
+
+.audio-player-button.small.icon-backward i.fa {
+	right: 4px;
+	position: absolute;
+	top: 2.5px;
+}
+
+.audio-player-button.audio-player-place-pause-button i.fa.fa-play {
+	left: 6.5px;
+	position: absolute;
+	top: 3.75px;
+	font-size: 145%;
+}
+.audio-player-button.audio-player-place-pause-button i.fa.fa-pause {
+	left: 5.75px;
+	position: absolute;
+	top: 5px;
+	font-size: 125%;
+}
+
+.audio-player-button.small.icon-forward i.fa {
+	left: 4px;
+	position: absolute;
+	top: 2.5px;
+}
+
+/*END OF AUDIO PLAYER */
+
+
+
+#aboutWrapper {
+	padding: 0 10px;
+	background-color: #fff;
+	color: #000;
+}
+
+
+
+
+
+
+
